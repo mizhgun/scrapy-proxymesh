@@ -13,7 +13,7 @@ class SimpleProxymeshMiddleware(object):
         return o
 
     def process_request(self, request, spider):
-        if request.meta.get('proxy') is None:
+        if not request.meta.get('bypass_proxy', False) and request.meta.get('proxy') is None:
             request.meta['proxy'] = self.proxy
             if self.timeout and not request.headers.get('X-ProxyMesh-Timeout'):
                 request.headers.update({'X-ProxyMesh-Timeout': self.timeout})
