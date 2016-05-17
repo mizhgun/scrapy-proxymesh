@@ -1,9 +1,11 @@
 # -*- coding: utf-8 -*
 __author__ = 'mizhgun@gmail.com'
-
+from scrapy.exceptions import NotConfigured
 
 class SimpleProxymeshMiddleware(object):
     def __init__(self, settings):
+        if not settings.getbool('PROXYMESH_ENABLED', True):
+            raise NotConfigured
         self.proxy = settings.get('PROXYMESH_URL', 'http://us-il.proxymesh.com:31280')
         self.timeout = settings.getint('PROXYMESH_TIMEOUT', 0)
 
