@@ -4,7 +4,7 @@ Proxymesh downloader middleware for Scrapy.
 
 ## Installation
 
-##### From PyPi
+##### From PyPI
 
     pip install scrapy-proxymesh
     
