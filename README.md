@@ -4,6 +4,12 @@ Proxymesh downloader middleware for Scrapy.
 
 ## Installation
 
+##### From PyPi
+
+    pip install scrapy-proxymesh
+    
+##### From GitHub
+
     pip install -e git+https://github.com/mizhgun/scrapy-proxymesh@master#egg=scproxymesh
 
 ## Usage
